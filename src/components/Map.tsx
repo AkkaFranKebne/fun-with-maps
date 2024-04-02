@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import H from '@here/maps-api-for-javascript';
+import { Position, mapPointsList } from '../utils/dataForMap';
+import { MapPointsList } from './MApPointsList';
 
 type MyMap = {
   apikey: string;
