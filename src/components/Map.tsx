@@ -1,17 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { Position, mapPointsList } from '../utils/dataForMap';
-import { MapPointsList } from './MApPointsList';
+import { Position } from '../utils/dataForMap';
+import { calculateRoute } from '../utils/calculateRoute';
 
 type MyMap = {
   apikey: string;
+  userPosition: Position;
+  mapPointPosition: Position | null;
 }
 
 export const MyMap: React.FC<MyMap> = (props) => {
   const mapRef = useRef<HTMLInputElement | null>(null);
   const map = useRef<HTMLInputElement | null>(null);
   const platform = useRef<HTMLInputElement | null>(null)
-  const { apikey } = props;
+  const { apikey, userPosition, mapPointPosition  } = props;
 
   useEffect(
     () => {
@@ -39,10 +41,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
          //@ts-ignore
         const newMap = new H.Map(mapRef.current, rasterTileLayer, {
           pixelRatio: window.devicePixelRatio,
-          center: {
-            lat: 64.144,
-            lng: -21.94,
-          },
+          center: userPosition,
           zoom: 14,
         });
   
@@ -55,9 +54,14 @@ export const MyMap: React.FC<MyMap> = (props) => {
          //@ts-ignore
         map.current = newMap;
       }
+
+      if (mapPointPosition) {
+        calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
+    }
+
     },
     // Dependencies array
-    [apikey]
+    [apikey, userPosition, mapPointPosition]
   );
   
   // Return a div element to hold the map

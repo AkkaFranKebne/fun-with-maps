@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MyMap } from './Map';
-import { Position, mapPointsList } from '../utils/dataForMap';
+import { Position, mapPointsList, userPosition } from '../utils/dataForMap';
 import { MapPointsList } from './MApPointsList';
 
 const apikey = import.meta.env.VITE_HERE_MAP_API_KEY;
@@ -16,7 +16,7 @@ export const AppContent: React.FC = () => {
     {apikey && 
     <>
       <MapPointsList list={mapPointsList} onClickHandler={onClickHandler}/>
-      <MyMap apikey={apikey} />
+      <MyMap apikey={apikey} userPosition={userPosition} mapPointPosition={mapPointPosition}/>
     </>}
   </div>
   )
