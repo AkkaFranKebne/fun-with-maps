@@ -1,3 +1,5 @@
 import React from 'react';
+import { MyMap } from './Map';
 
-export const AppContent: React.FC = () => <div>I am your true component now</div>;
+const apikey = import.meta.env.VITE_HERE_MAP_API_KEY;
+export const AppContent: React.FC = () => <div className='content'>{apikey && <MyMap apikey={apikey} />}</div>;
