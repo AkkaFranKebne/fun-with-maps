@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MyMap } from './Map';
 import { Position, mapPointsList, userPosition } from '../utils/dataForMap';
-import { MapPointsList } from './MApPointsList';
+import { MapPointsList } from './MapPointsList';
 
 const apikey = import.meta.env.VITE_HERE_MAP_API_KEY;
 export const AppContent: React.FC = () => {

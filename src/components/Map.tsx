@@ -49,10 +49,14 @@ export const MyMap: React.FC<MyMap> = (props) => {
         const behavior = new H.mapevents.Behavior(
           new H.mapevents.MapEvents(newMap)
         );
-  
+
         // Set the map object to the reference
          //@ts-ignore
         map.current = newMap;
+
+        // Create the default UI:
+        //@ts-ignore
+        const ui = H.ui.UI.createDefault(newMap, rasterTileLayer);
       }
 
       if (mapPointPosition) {
@@ -65,7 +69,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
   );
   
   // Return a div element to hold the map
-  return <div style={ { width: "100%", height: "100%" } } ref={mapRef} />;
+  return <div style={ { width: "100%", height: "70%" } } ref={mapRef} />;
 
   
  }
