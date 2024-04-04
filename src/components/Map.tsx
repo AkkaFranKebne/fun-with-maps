@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { Position } from '../utils/dataForMap';
-import { calculateRoute } from '../utils/calculateRoute';
+import { Position, mapPointsList } from '../utils/dataForMap';
+import { addInfoBubble } from '../utils/addMapInfo';
 
 type MyMap = {
   apikey: string;
   userPosition: Position;
   mapPointPosition: Position | null;
 }
+
+
 
 export const MyMap: React.FC<MyMap> = (props) => {
   const mapRef = useRef<HTMLInputElement | null>(null);
@@ -57,11 +59,15 @@ export const MyMap: React.FC<MyMap> = (props) => {
         // Create the default UI:
         //@ts-ignore
         const ui = H.ui.UI.createDefault(newMap, rasterTileLayer);
-      }
 
-      if (mapPointPosition) {
+        // adding bubble info
+        addInfoBubble(newMap, ui, mapPointsList);
+      }
+ 
+
+    /*       if (mapPointPosition) {
         calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
-    }
+    } */
 
     },
     // Dependencies array
