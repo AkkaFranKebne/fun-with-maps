@@ -1,4 +1,5 @@
 import { MapPointType } from "./dataForMap";
+import { moveMap } from "./navigateOnMap";
 
 /**
  * Creates a new marker and adds it to a group
@@ -28,6 +29,8 @@ export function addInfoBubble(map: any, ui: any, pointsData: MapPointType[]) {
     });
     // show info bubble
     ui.addBubble(bubble);
+    // center map on users position
+    moveMap(map, evt.target.a)
   }, false);
 
   pointsData.map(point => {
