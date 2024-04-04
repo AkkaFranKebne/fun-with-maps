@@ -1,5 +1,8 @@
 import { MapPointType } from "./dataForMap";
+import { mappointIcon } from "./mapPoint";
 import { moveMap } from "./navigateOnMap";
+
+
 
 /**
  * Creates a new marker and adds it to a group
@@ -8,12 +11,12 @@ import { moveMap } from "./navigateOnMap";
  * @param {String} html             Data associated with the marker
  */
 export function addMarkerToGroup(group: any, coordinate: any, html: any) {
-  var marker = new H.map.Marker(coordinate);
+  //@ts-ignore
+  var marker = new H.map.Marker(coordinate, {icon: mappointIcon});
   // add custom data to the marker
   marker.setData(html);
   group.addObject(marker);
 }
-
 export function addInfoBubble(map: any, ui: any, pointsData: MapPointType[]) {
   var group = new H.map.Group();
 
