@@ -4,12 +4,12 @@ import { MapPointType } from '../utils/dataForMap';
 
 type MapPoint = {
   data: MapPointType;
-  onClickHandler: (location: any) => void;
+  onClickHandler: (mapPoint: MapPointType) => void;
 }
 
 export const MapPoint: React.FC<MapPoint> = (props)  => {
   const handleClick = () => {
-    props.onClickHandler(props.data.location);
+    props.onClickHandler(props.data);
   };
   // Add basic styling for each entry
   const entryStyle = {

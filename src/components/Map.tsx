@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
-import { addInfoBubble } from '../utils/addMapInfo';
+import { MapPointType, Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
+import { addInfoBubble, showBubbleOnMenuClick } from '../utils/addMapInfo';
 
 type MyMap = {
   apikey: string;
   userPosition: Position;
-  mapPointPosition: Position | null;
+  mapPointPosition: MapPointType | null;
 }
 
 
@@ -15,6 +15,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
   const mapRef = useRef<HTMLInputElement | null>(null);
   const map = useRef<HTMLInputElement | null>(null);
   const platform = useRef<HTMLInputElement | null>(null)
+  const uis = useRef<HTMLInputElement | null>(null)
   const { apikey, userPosition, mapPointPosition  } = props;
 
   useEffect(
@@ -57,8 +58,9 @@ export const MyMap: React.FC<MyMap> = (props) => {
         map.current = newMap;
 
         // Create the default UI:
-        //@ts-ignore
         const ui = H.ui.UI.createDefault(newMap, rasterTileLayer);
+         //@ts-ignore
+        uis.current = ui;
 
         // adding bubble info
         addInfoBubble(newMap, ui, mapPointsList);
@@ -76,11 +78,11 @@ export const MyMap: React.FC<MyMap> = (props) => {
         // add polygon 
         //addPolygonToMap(newMap);
       }
- 
 
-    /*       if (mapPointPosition) {
-        calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
-    } */
+      if (mapPointPosition) {
+        //calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
+        showBubbleOnMenuClick(map.current, uis.current, mapPointPosition);
+    } 
 
     },
     // Dependencies array

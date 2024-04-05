@@ -5,7 +5,7 @@ import { MapPoint } from './MapPoint';
 
 type MapPointsList = {
   list: MapPointType[];
-  onClickHandler: (location: any) => void;
+  onClickHandler: (mapPoint: MapPointType) => void;
 }
 
 export const MapPointsList: React.FC<MapPointsList> = (props)  => {
