@@ -24,6 +24,8 @@ export function addInfoBubble(map: any, ui: any, pointsData: MapPointType[]) {
 
   // add 'tap' event listener, that opens info bubble, to the group
   group.addEventListener('tap', function (evt: any) {
+    //close the opened bubble
+    ui.getBubbles().forEach((bub: any) => ui.removeBubble(bub));
     // event target is the marker itself, group is a parent event target
     // for all objects that it contains
     var bubble = new H.ui.InfoBubble(evt.target.getGeometry(), {
