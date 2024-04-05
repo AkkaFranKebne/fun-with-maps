@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { Position, mapPointsList } from '../utils/dataForMap';
+import { Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
 import { addInfoBubble } from '../utils/addMapInfo';
 
 type MyMap = {
@@ -62,6 +62,19 @@ export const MyMap: React.FC<MyMap> = (props) => {
 
         // adding bubble info
         addInfoBubble(newMap, ui, mapPointsList);
+
+        // adding circle
+        const circle = new H.map.Circle(circleCenterPosition, 1100, {
+          style: {
+            fillColor: 'rgba(255, 255, 255, 0.5)',
+            strokeColor: '#829',
+            lineWidth: 1
+          }
+        });
+        newMap.addObject(circle);
+
+        // add polygon 
+        //addPolygonToMap(newMap);
       }
  
 
