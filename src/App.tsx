@@ -1,5 +1,5 @@
-import './App.scss'
 import { AppContent } from './components/AppContent'
+import './App.scss'
 
 function App() {
 

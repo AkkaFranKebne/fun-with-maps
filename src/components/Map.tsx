@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
 import { MapPointType, Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
 import { addInfoBubble, showBubbleOnMenuClick } from '../utils/addMapInfo';
+import './Map.scss'
 
 type MyMap = {
   apikey: string;
@@ -90,7 +91,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
   );
   
   // Return a div element to hold the map
-  return <div style={ { width: "100%", height: "70%" } } ref={mapRef} />;
+  return <div style={ { width: "100%", height: "70%" } } ref={mapRef} className='map'/>;
 
   
  }
