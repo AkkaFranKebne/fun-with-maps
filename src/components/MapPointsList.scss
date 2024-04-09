@@ -1,4 +1,15 @@
-.map-points-wrapper {
+#map-points-wrapper {
+  background-color: white;
+  &.onTop {
+    @media only screen and (min-width: 600px)  {
+      height: 60px;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+  }
   #carret-down {
     width: 0; 
     height: 0; 

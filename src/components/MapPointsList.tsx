@@ -21,7 +21,7 @@ export const MapPointsList: React.FC<MapPointsList> = (props)  => {
     return <MapPoint data={entry} onClickHandler={props.onClickHandler} key={Math.random()}></MapPoint>
   });
   return (
-  <div className='map-points-wrapper'>
+  <div id='map-points-wrapper' className={!showMapPointsList ? 'onTop' : undefined}>
     <div>
       <h2>Check our locations:</h2>
       <div id='carret-down' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>

@@ -91,7 +91,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
   );
   
   // Return a div element to hold the map
-  return <div style={ { width: "100%", height: "70%" } } ref={mapRef} className='map'/>;
+  return <div style={ { width: "100%", height: "100%" } } ref={mapRef}/>;
 
   
  }
