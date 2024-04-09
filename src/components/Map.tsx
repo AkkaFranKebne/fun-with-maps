@@ -78,6 +78,14 @@ export const MyMap: React.FC<MyMap> = (props) => {
 
         // add polygon 
         //addPolygonToMap(newMap);
+
+
+        // resize map on window resize
+        window.addEventListener('resize', function () {
+          console.log('RESIZING!');
+          newMap.getViewPort().resize(); 
+        });
+
       }
 
       if (mapPointPosition) {
