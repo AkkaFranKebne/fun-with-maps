@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPointType } from '../utils/dataForMap';
+import './MapPoint.scss'
 
 type MapPoint = {
   data: MapPointType;
@@ -8,21 +9,14 @@ type MapPoint = {
 }
 
 export const MapPoint: React.FC<MapPoint> = (props)  => {
+  const [ clicked, setClicked ] = useState<boolean>(false);
   const handleClick = () => {
     props.onClickHandler(props.data);
-  };
-  // Add basic styling for each entry
-  const entryStyle = {
-    display: "inline-block",
-    padding: "10px",
-    margin: "5px",
-    border: "1px solid gray",
-    borderRadius: "5px",
-    cursor: "pointer",
+    setClicked(true);
   };
 
   return (
-    <div style={entryStyle} onClick={handleClick}>
+    <div onClick={handleClick} className='map-point' id={clicked ? 'clicked' : undefined}>
       {props.data.name}
     </div>
   );

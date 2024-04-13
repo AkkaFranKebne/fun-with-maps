@@ -1,3 +1,14 @@
+
+@keyframes jump {
+  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+}
+
+@keyframes fullRotate {
+  100% {transform: rotate(180deg);}
+}
+
 #map-points-wrapper {
   background-color: white;
   border-radius: 10px 10px 0 0;
@@ -25,7 +36,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 5px;
+    margin: 0 10px;
   }
   #carret-down {
     width: 0; 
@@ -34,6 +45,13 @@
     border-right: 10px solid transparent;
     border-top: 10px solid black;
     margin: auto 5px;
+    &:hover {
+      transform-origin: 50% 50%;
+      animation: jump .5s linear alternate infinite;
+    }
+    &:active {
+      animation: fullRotate .3s linear forwards;
+    }
   }
   #carret-up {
     width: 0; 
@@ -42,6 +60,13 @@
     border-right: 10px solid transparent;
     border-bottom: 10px solid black;
     margin: auto 5px;
+    &:hover {
+      transform-origin: 50% 50%;
+      animation: jump .5s linear alternate infinite;
+    }
+    &:active {
+      animation: fullRotate .3s linear forwards;
+    }
   }
   #map-points-list {
     display: grid;
