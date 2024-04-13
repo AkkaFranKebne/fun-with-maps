@@ -37,6 +37,52 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 10px;
+    position: relative;
+  }
+  #open {
+    display: none;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    margin: auto 5px;
+    &:hover {
+      transform-origin: 50% 50%;
+      animation: jump .5s linear alternate infinite;
+    }
+    &:active {
+      animation: fullRotate .3s linear forwards;
+    }
+    @media only screen and (min-width: 600px)  {
+      display: block;
+    }
+  }
+  #close {
+    display: none;
+    @media only screen and (min-width: 600px)  {
+      display: block;
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      &:hover {
+        top: 11px;
+      }
+    }
+  }
+  #close:before, #close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 15px;
+    width: 2px;
+    background-color: black;
+  }
+  #close:before {
+    transform: rotate(45deg);
+  }
+  #close:after {
+    transform: rotate(-45deg);
   }
   #carret-down {
     width: 0; 
@@ -52,6 +98,9 @@
     &:active {
       animation: fullRotate .3s linear forwards;
     }
+    @media only screen and (min-width: 600px)  {
+      display: none;
+    }
   }
   #carret-up {
     width: 0; 
@@ -66,6 +115,9 @@
     }
     &:active {
       animation: fullRotate .3s linear forwards;
+    }
+    @media only screen and (min-width: 600px)  {
+      display: none;
     }
   }
   #map-points-list {
