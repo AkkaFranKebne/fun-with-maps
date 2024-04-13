@@ -3,6 +3,7 @@ import H from '@here/maps-api-for-javascript';
 import { MapPointType, Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
 import { addInfoBubble, showBubbleOnMenuClick } from '../utils/addMapInfo';
 import './Map.scss'
+import useElementSize from '../hooks/useElementSize';
 
 type MyMap = {
   apikey: string;
@@ -18,6 +19,9 @@ export const MyMap: React.FC<MyMap> = (props) => {
   const platform = useRef<HTMLInputElement | null>(null)
   const uis = useRef<HTMLInputElement | null>(null)
   const { apikey, userPosition, mapPointPosition  } = props;
+  
+  // observing the map's div size
+  const [boxRef, { width, height }] = useElementSize();
 
   useEffect(
     () => {
@@ -82,7 +86,6 @@ export const MyMap: React.FC<MyMap> = (props) => {
 
         // resize map on window resize
         window.addEventListener('resize', function () {
-          console.log('RESIZING!');
           newMap.getViewPort().resize(); 
         });
 
@@ -97,9 +100,17 @@ export const MyMap: React.FC<MyMap> = (props) => {
     // Dependencies array
     [apikey, userPosition, mapPointPosition]
   );
+
+  useEffect(() => {
+    if (map.current) {
+      // resizing map on div size change
+      //@ts-ignore
+      map.current.getViewPort().resize(); 
+    }
+  }, [width, height]);
   
   // Return a div element to hold the map
-  return <div style={ { width: "100%", height: "100%" } } ref={mapRef}/>;
+  return <div style={ { width: "100%", height: "100%" } } ref={boxRef} ><div style={ { width: "100%", height: "100%" } } ref={mapRef}/></div>;
 
   
  }
