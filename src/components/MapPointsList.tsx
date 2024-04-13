@@ -22,7 +22,7 @@ export const MapPointsList: React.FC<MapPointsList> = (props)  => {
   });
   return (
   <div id='map-points-wrapper' className={!showMapPointsList ? 'onTop' : undefined}>
-    <div>
+    <div id='header-wrapper'>
       <h2>Check our locations:</h2>
       <div id='carret-down' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
       <div id='carret-up' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
