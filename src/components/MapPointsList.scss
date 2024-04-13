@@ -70,11 +70,15 @@
   }
   #map-points-list {
     display: grid;
+    max-height: 300px;
+    transition: all 1s ease-in-out;
   }
   .undisplayed {
     display: none !important;
   }
   .unvisible {
-    visibility: hidden;
+    max-height: 0 !important;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
   }
 }

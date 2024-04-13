@@ -27,7 +27,7 @@ export const MapPointsList: React.FC<MapPointsList> = (props)  => {
       <div id='carret-down' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
       <div id='carret-up' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
     </div>
-    <div id="map-points-list" className={!showMapPointsList ? 'undisplayed' : undefined}>
+    <div id="map-points-list" className={!showMapPointsList ? 'unvisible' : undefined}>
     {list}
     </div>
   </div>
