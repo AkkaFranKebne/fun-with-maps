@@ -32,6 +32,21 @@
       margin: 0 0 -15px 0;
     }
   }
+  #drag-indicator-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    @media only screen and (min-width: 600px)  {
+      display: none;
+    }
+    #drag-indicator {
+      width: 30px;
+      height: 4px;
+      background-color: grey;
+      border-radius: 3px;
+    }
+  }
   #header-wrapper {
     display: flex;
     flex-direction: row;
