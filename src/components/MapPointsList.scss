@@ -19,17 +19,16 @@
   @media only screen and (min-width: 600px)  {
     border-radius: 0 10px 10px 0;
     margin: 0 -15px 0 0;
+    width: 265px;
+    max-width: 265px;
+    transition: all 0.1s ease-in-out;
   }
 
   &.onTop {
     @media only screen and (min-width: 600px)  {
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      border-radius: 0  0 10px 10px;
-      margin: 0 0 -15px 0;
+      width: 50px;
+      max-width: 50px;
+      transition: all 0.1s ease-in-out;
     }
   }
   #drag-indicator-wrapper {
@@ -53,6 +52,7 @@
     justify-content: space-between;
     margin: 0 10px;
     position: relative;
+    overflow:hidden;
   }
   #open {
     display: none;
@@ -140,7 +140,7 @@
     max-height: 300px;
     transition: all 1s ease-in-out;
     overflow: scroll;
-    @media only screen and (min-width: 600px)  {
+@media only screen and (min-width: 600px)  {
       transition: none;
       max-height: 90vh;
     }
@@ -148,12 +148,21 @@
   .undisplayed {
     display: none !important;
   }
+
+  .undisplayedDesktop {
+    @media only screen and (min-width: 600px)  {
+      max-height: 0 !important;
+      overflow: hidden;
+      transition: all 1.2s linear;
+    }
+  }
+
   .unvisible {
     max-height: 0 !important;
     overflow: hidden;
     transition: all 1s ease-in-out;
     @media only screen and (min-width: 600px)  {
-      transition: none;
+          transition: none;
     }
   }
 }
