@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { MapPointType, Position, circleCenterPosition, mapPointsList } from '../utils/dataForMap';
+import { MapPointType, Position, circleCenterPosition } from '../utils/dataForMap';
 import { addInfoBubble, showBubbleOnMenuClick } from '../utils/addMapInfo';
 import './Map.scss'
 import useElementSize from '../hooks/useElementSize';
@@ -9,6 +9,7 @@ type MyMap = {
   apikey: string;
   userPosition: Position;
   mapPointPosition: MapPointType | null;
+  mapPointsList: MapPointType[];
 }
 
 
@@ -18,7 +19,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
   const map = useRef<HTMLInputElement | null>(null);
   const platform = useRef<HTMLInputElement | null>(null)
   const uis = useRef<HTMLInputElement | null>(null)
-  const { apikey, userPosition, mapPointPosition  } = props;
+  const { apikey, userPosition, mapPointPosition, mapPointsList  } = props;
   
   // observing the map's div size
   const [boxRef, { width, height }] = useElementSize();

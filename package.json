@@ -13,6 +13,7 @@
     "@here/maps-api-for-javascript": "^1.53.0",
     "@react-hook/resize-observer": "^1.2.6",
     "@types/heremaps": "^3.1.14",
+    "axios": "^1.6.8",
     "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
