@@ -15,6 +15,13 @@ module.exports = {
   },
   overrides: [
     {
+      "files": ["tests/**/*"],
+      "plugins": ["jest"],
+      "env": {
+        "jest/globals": true
+      }
+    },
+    {
       files: ["src/**/*.{ts,tsx}"],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",

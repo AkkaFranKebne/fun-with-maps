@@ -8,7 +8,7 @@ type GeoCodeService = {
 
 // The data layer acts as an intermediary between the components and the service layer. Its primary responsibility is to manage data retrieval, transformation, and caching.
 
-export const getGeoCodeService = (client: GeoCodeClient): GeoCodeService => ({
+export const createGeoCodeService = (client: GeoCodeClient): GeoCodeService => ({
   getAddress: async (lat, lng) => {
     try {
       const response = await client.getAddress(lat, lng);
@@ -26,4 +26,4 @@ export const getGeoCodeService = (client: GeoCodeClient): GeoCodeService => ({
   },
 });
 
-export const geoCodeService = getGeoCodeService(geoCodeClient);
+export const geoCodeService = createGeoCodeService(geoCodeClient);

@@ -6,7 +6,7 @@ export type GeoCodeClient = {
   getAddress: (lat: number, lng: number) => Promise<AxiosResponse<AddressEntity, any>>;
 }
 
-const apikey = import.meta.env.VITE_GEO_CODE_API_KEY;
+const apikey = process.env.VITE_GEO_CODE_API_KEY;
 
 // The service layer encapsulates the logic for making API requests using Axios. It abstracts away the details of API endpoints, request configurations, and error handling. This layer allows us to centralize API-related code and reuse it throughout the application.The service layer encapsulates the logic for making API requests using Axios. It abstracts away the details of API endpoints, request configurations, and error handling. This layer allows us to centralize API-related code and reuse it throughout the application.
 
