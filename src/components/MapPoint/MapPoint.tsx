@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MapPointType } from '../utils/dataForMap';
+import { MapPointType } from '../../utils/dataForMap';
 import './MapPoint.scss'
 
 type MapPoint = {

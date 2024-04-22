@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { MapPointType } from '../utils/dataForMap';
-import { MapPoint } from './MapPoint';
+import { MapPointType } from '../../utils/dataForMap';
+import { MapPoint } from '../MapPoint/MapPoint';
 import './MapPointsList.scss'
-import useSwipe from '../hooks/useSwipe';
+import useSwipe from '../../hooks/useSwipe';
 
 type MapPointsList = {
   list: MapPointType[];

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { MapPointType, Position, circleCenterPosition } from '../utils/dataForMap';
-import { addInfoBubble, showBubbleOnMenuClick } from '../utils/addMapInfo';
+import { MapPointType, Position, circleCenterPosition } from '../../utils/dataForMap';
+import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo';
 import './Map.scss'
-import useElementSize from '../hooks/useElementSize';
+import useElementSize from '../../hooks/useElementSize';
 
 type MyMap = {
   apikey: string;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { MyMap } from './Map';
-import { MapPointType, Position, coordinatesList, userPosition } from '../utils/dataForMap';
-import { MapPointsList } from './MapPointsList';
+import { MyMap } from '../Map/Map';
+import { MapPointType, Position, coordinatesList, userPosition } from '../../utils/dataForMap';
+import { MapPointsList } from '../MapPointsList/MapPointsList';
 import './AppContent.scss'
-import { geoCodeService } from '../services/GeoCodeService';
+import { geoCodeService } from '../../services/GeoCodeService';
 
 const apikey = process.env.VITE_HERE_MAP_API_KEY;
 export const AppContent: React.FC = () => {
