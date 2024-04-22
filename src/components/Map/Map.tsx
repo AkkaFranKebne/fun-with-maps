@@ -55,6 +55,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
         });
   
         // Add panning and zooming behavior to the map
+        //@ts-ignore
         const behavior = new H.mapevents.Behavior(
           new H.mapevents.MapEvents(newMap)
         );
@@ -73,6 +74,7 @@ export const MyMap: React.FC<MyMap> = (props) => {
 
         // adding circle
         const circle = new H.map.Circle(circleCenterPosition, 1100, {
+          //@ts-ignore
           style: {
             fillColor: 'rgba(255, 255, 255, 0.5)',
             strokeColor: '#829',
