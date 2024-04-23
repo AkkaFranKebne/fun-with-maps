@@ -1,13 +1,14 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import {describe, test, expect} from 'vitest';
 import { MapPointsList } from "./MapPointsList";
-
+import { MapPointType } from '../../utils/dataForMap';
+import { mock } from 'strong-mock';
 
 describe('MapPointsList', () => {
-  it('should render', () => {
+  test('should render and show the name', () => {
 
-    const mockMapPoint = {
-      name: 'string',
+    const stubMapPoint = {
+      name: 'Name', 
       location: {
           lat: 2,
           lng: 1
@@ -15,8 +16,11 @@ describe('MapPointsList', () => {
         ,
     };
 
+    const onClickHandlerMock = mock<(mapPoint: MapPointType) => void>();
+
     render(
-      <MapPointsList list={[mockMapPoint]} onClickHandler={() => undefined}/>
+      <MapPointsList list={[stubMapPoint]} onClickHandler={onClickHandlerMock}/>
     );
+    expect(screen.getByText('Name')).toBeDefined()
   })
 });

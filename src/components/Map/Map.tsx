@@ -5,7 +5,7 @@ import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo';
 import './Map.scss'
 import useElementSize from '../../hooks/useElementSize';
 
-type MyMap = {
+export type MyMapType = {
   apikey: string;
   userPosition: Position;
   mapPointPosition: MapPointType | null;
@@ -14,7 +14,7 @@ type MyMap = {
 
 
 
-export const MyMap: React.FC<MyMap> = (props) => {
+export const MyMap: React.FC<MyMapType> = (props) => {
   const mapRef = useRef<HTMLInputElement | null>(null);
   const map = useRef<HTMLInputElement | null>(null);
   const platform = useRef<HTMLInputElement | null>(null)

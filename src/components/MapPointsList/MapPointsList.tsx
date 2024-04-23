@@ -5,12 +5,12 @@ import { MapPoint } from '../MapPoint/MapPoint';
 import './MapPointsList.scss'
 import useSwipe from '../../hooks/useSwipe';
 
-type MapPointsList = {
+export type MapPointsListType = {
   list: MapPointType[];
   onClickHandler: (mapPoint: MapPointType) => void;
 }
 
-export const MapPointsList: React.FC<MapPointsList> = (props)  => {
+export const MapPointsList: React.FC<MapPointsListType> = (props)  => {
   const [ showMapPointsList, setShowMapPointList ] = useState<boolean>(true);
   const entries = props.list;
 

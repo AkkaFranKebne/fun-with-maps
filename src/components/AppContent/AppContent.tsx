@@ -5,7 +5,7 @@ import { MapPointsList } from '../MapPointsList/MapPointsList';
 import './AppContent.scss'
 import { geoCodeService } from '../../services/GeoCodeService';
 
-const apikey = process.env.VITE_HERE_MAP_API_KEY;
+const apikey = import.meta.env.VITE_HERE_MAP_API_KEY;
 export const AppContent: React.FC = () => {
   const [mapPointPosition, setMapPointPosition] = useState<MapPointType | null  >(null);
   const [mapPointsList, setMapPointsList] = useState<MapPointType[] | null  >(null);

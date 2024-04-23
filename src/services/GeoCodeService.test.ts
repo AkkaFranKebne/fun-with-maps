@@ -1,4 +1,5 @@
 import { mock, verifyAll, when } from 'strong-mock';
+import {describe, test, expect, afterEach } from 'vitest';
 import { GeoCodeClient } from './GeoCodeClient';
 import { createGeoCodeService } from './GeoCodeService';
 import { AxiosRequestHeaders, AxiosResponse } from 'axios';
@@ -28,12 +29,12 @@ describe('GeoCodeService', () => {
 
   afterEach(verifyAll);
 
-  it('should get address', async () => {
+  test('should get address', async () => {
     when(() => mockClient.getAddress(lat, lng)).thenResolve(apiResponseStub);
     expect(await geoCodeService.getAddress(lat, lng)).toEqual(addressStub);
   });
 
-  it('should throw error', async () => {
+  test('should throw error', async () => {
     when(() => mockClient.getAddress(lat, lng)).thenReject();
 
     await expect(() => geoCodeService.getAddress(lat, lng)).rejects.toThrow(
