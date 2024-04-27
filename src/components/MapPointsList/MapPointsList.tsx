@@ -38,7 +38,7 @@ export const MapPointsList: React.FC<MapPointsListType> = (props)  => {
       <div id='close' role='close' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
       <div id='open' role='open' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
     </div>
-    <div id="map-points-list" className={!showMapPointsList ? 'unvisible' : undefined}>
+    <div id="map-points-list" role='map-points-list' className={!showMapPointsList ? 'unvisible' : undefined}>
     {list}
     </div>
   </div>
