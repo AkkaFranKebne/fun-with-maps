@@ -16,7 +16,7 @@ export const MapPoint: React.FC<MapPoint> = (props)  => {
   };
 
   return (
-    <div onClick={handleClick} className='map-point' id={clicked ? 'clicked' : undefined}>
+    <div onClick={handleClick} role='map-point' className='map-point' id={clicked ? 'clicked' : undefined}>
       {props.data.name}
     </div>
   );
