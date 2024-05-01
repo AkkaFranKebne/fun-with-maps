@@ -1,5 +1,5 @@
 import { MapPointType, Position } from "./dataForMap";
-import { mappointIcon } from "./mapPoint";
+import { mapPoint } from "./mapPoint";
 import { moveMap } from "./navigateOnMap";
 
 
@@ -11,17 +11,19 @@ import { moveMap } from "./navigateOnMap";
  * @param {String} html             Data associated with the marker
  */
  function addMarkerToGroup(group: any, coordinate: any, html: any) {
+  // Create an icon, an object holding the latitude and longitude, and a marker:
+  const  mappointIcon = new H.map.Icon(mapPoint) 
   //@ts-ignore
   var marker = new H.map.Marker(coordinate, {icon: mappointIcon});
   // add custom data to the marker
   marker.setData(html);
   group.addObject(marker);
-}
+  }
 
 /**
  * Shows bubble on the map
  */
- function showBubble(map: any, ui: any, name: string, location: Position) {
+ export function showBubble(map: any, ui: any, name: string, location: Position) {
   //close the opened bubble
   ui.getBubbles().forEach((bub: any) => ui.removeBubble(bub));
   // event target is the marker itself, group is a parent event target
@@ -51,6 +53,16 @@ export function addInfoBubble(map: any, ui: any, pointsData: MapPointType[]) {
   })
 }
 
- export function showBubbleOnMenuClick(map: any, ui: any, dataPoint: MapPointType) {
-  showBubble(map, ui, dataPoint.name, dataPoint.location)
-}  
+type showBubbleOnMenuClickType = {
+  map: any, 
+  ui: any, 
+  dataPoint: MapPointType, 
+  showBubbleFunction?: typeof showBubble,
+}
+
+ export const showBubbleOnMenuClick = (props: showBubbleOnMenuClickType ) => {
+
+  const { map, ui, dataPoint, showBubbleFunction }  = props;
+  const showCorrectBubble = showBubbleFunction || showBubble;
+  showCorrectBubble(map, ui, dataPoint.name, dataPoint.location);
+}   

@@ -96,7 +96,7 @@ export const MyMap: React.FC<MyMapType> = (props) => {
 
       if (mapPointPosition) {
         //calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
-        showBubbleOnMenuClick(map.current, uis.current, mapPointPosition);
+        showBubbleOnMenuClick({map: map.current, ui: uis.current, dataPoint: mapPointPosition});
     } 
 
     },
