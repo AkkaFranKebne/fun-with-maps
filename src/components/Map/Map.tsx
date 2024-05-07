@@ -70,7 +70,7 @@ export const MyMap: React.FC<MyMapType> = (props) => {
         uis.current = ui;
 
         // adding bubble info
-        addInfoBubble(newMap, ui, mapPointsList);
+        addInfoBubble({map: newMap, ui, pointsData: mapPointsList, H});
 
         // adding circle
         const circle = new H.map.Circle(circleCenterPosition, 1100, {

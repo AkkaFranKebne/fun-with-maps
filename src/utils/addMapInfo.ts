@@ -10,7 +10,7 @@ import { moveMap } from "./navigateOnMap";
  * @param {H.geo.Point} coordinate  The location of the marker
  * @param {String} html             Data associated with the marker
  */
- function addMarkerToGroup(group: any, coordinate: any, html: any) {
+ export function addMarkerToGroup(group: any, coordinate: any, html: any) {
   // Create an icon, an object holding the latitude and longitude, and a marker:
   const  mappointIcon = new H.map.Icon(mapPoint) 
   //@ts-ignore
@@ -36,20 +36,32 @@ import { moveMap } from "./navigateOnMap";
   ui.addBubble(bubble);
   // center map on users position
   moveMap(map, location)
-} 
+}
 
-export function addInfoBubble(map: any, ui: any, pointsData: MapPointType[]) {
+type addInfoBubbleType = {
+  map: any, 
+  ui: any, 
+  pointsData: MapPointType[],
+  showBubbleFunction?: typeof showBubble,
+  addMarkerToGroupFunction?: typeof addMarkerToGroup,
+  H?: any,
+}
+
+export function addInfoBubble(props: addInfoBubbleType) {
+  const { H, map, ui, pointsData, showBubbleFunction, addMarkerToGroupFunction } = props;
   var group = new H.map.Group();
 
   map.addObject(group);
 
   // add 'tap' event listener, that opens info bubble, to the group
   group.addEventListener('tap', function (evt: any) {
-    showBubble(map, ui, evt.target.getData(), evt.target.getGeometry())
+    const showCorrectBubble = showBubbleFunction || showBubble;
+    showCorrectBubble(map, ui, evt.target.getData(), evt.target.getGeometry())
   }, false);
 
   pointsData.map(point => {
-    return  addMarkerToGroup(group, point.location, point.name);
+    const addCorrectMarkerToGroup = addMarkerToGroupFunction || addMarkerToGroup;
+    return  addCorrectMarkerToGroup(group, point.location, point.name);
   })
 }
 
