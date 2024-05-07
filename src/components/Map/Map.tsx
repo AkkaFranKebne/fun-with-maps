@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import H from '@here/maps-api-for-javascript';
-import { MapPointType, Position, circleCenterPosition } from '../../utils/dataForMap';
+import { MapPointType, Position, coordinatesList } from '../../utils/dataForMap';
 import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo';
 import './Map.scss'
 import useElementSize from '../../hooks/useElementSize';
+import { useMiddleCoordinate } from '../../hooks/useMiddleCoordinate';
 
 export type MyMapType = {
   apikey: string;
@@ -73,6 +74,9 @@ export const MyMap: React.FC<MyMapType> = (props) => {
         addInfoBubble({map: newMap, ui, pointsData: mapPointsList, H});
 
         // adding circle
+
+        const circleCenterPosition =  useMiddleCoordinate(coordinatesList);
+
         const circle = new H.map.Circle(circleCenterPosition, 1100, {
           //@ts-ignore
           style: {

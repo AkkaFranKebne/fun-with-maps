@@ -9,11 +9,9 @@ export type MapPointType = {
   location: Position;
 }
 
-export const userPosition: Position = { lat: 64.1472, lng: -21.9398 };
+export const userPosition: Position = { lat: 64.1472, lng: -21.9398 }; // would come from geo location in real life
 
-export const circleCenterPosition: Position   = { lat: 64.14410904777836, lng: -21.93906861878455 };
-
-export const coordinatesList: Position[] = [
+export const coordinatesList: Position[] = [ // would come from the client in real life
   { lat: 64.1508, lng: -21.9536 },
   { lat: 64.1502, lng: -21.9519 },
   { lat: 64.1475, lng: -21.9347 },
