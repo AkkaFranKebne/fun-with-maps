@@ -5,6 +5,7 @@ import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo';
 import './Map.scss'
 import useElementSize from '../../hooks/useElementSize';
 import { useMiddleCoordinate } from '../../hooks/useMiddleCoordinate';
+import { useDoubleRadius } from '../../hooks/useDoubleRadius';
 
 export type MyMapType = {
   apikey: string;
@@ -76,8 +77,7 @@ export const MyMap: React.FC<MyMapType> = (props) => {
         // adding circle
 
         const circleCenterPosition =  useMiddleCoordinate(coordinatesList);
-
-        const circle = new H.map.Circle(circleCenterPosition, 1100, {
+        const circle = new H.map.Circle(circleCenterPosition, useDoubleRadius(coordinatesList, circleCenterPosition), {
           //@ts-ignore
           style: {
             fillColor: 'rgba(255, 255, 255, 0.5)',
