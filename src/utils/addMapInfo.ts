@@ -30,12 +30,19 @@ import { moveMap } from "./navigateOnMap";
   // for all objects that it contains
   var bubble = new H.ui.InfoBubble(location, {
     // read custom data
-    content: name
+    content: name,
+    onStateChange: function(evt) {
+      //@ts-ignore
+      if (evt.target.getState() === H.ui.InfoBubble.State.CLOSED) {
+         // zoom out map
+        moveMap(map, location, 14);
+      }
+    }
   });
   // show info bubble
   ui.addBubble(bubble);
-  // center map on users position
-  moveMap(map, location)
+  // center and zoom in map on users position
+  moveMap(map, location, 15)
 }
 
 type addInfoBubbleType = {

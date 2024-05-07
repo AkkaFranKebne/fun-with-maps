@@ -6,11 +6,11 @@ import { Position } from "./dataForMap";
  * @param  {H.Map} map      A HERE Map instance within the application
  */
 
-export const moveMap = ( map: any, position: Position ) => {
+export const moveMap = ( map: any, position: Position, zoom: Number ) => {
   map.getViewModel().setLookAtData(
     {
       position,
-      zoom: 15
+      zoom,
     },
     true
   );
