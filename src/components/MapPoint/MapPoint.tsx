@@ -6,6 +6,7 @@ import './MapPoint.scss'
 type MapPoint = {
   data: MapPointType;
   onClickHandler: (mapPoint: MapPointType) => void;
+  id: number;
 }
 
 export const MapPoint: React.FC<MapPoint> = (props)  => {
@@ -16,7 +17,7 @@ export const MapPoint: React.FC<MapPoint> = (props)  => {
   };
 
   return (
-    <div onClick={handleClick} role='map-point' className='map-point' id={clicked ? 'clicked' : undefined}>
+    <div onClick={handleClick} role='map-point' className='map-point' id={clicked ? 'clicked' : undefined} data-testid={`map-point-${props.id}`}>
       {props.data.name}
     </div>
   );

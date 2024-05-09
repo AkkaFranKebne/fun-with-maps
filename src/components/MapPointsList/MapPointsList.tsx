@@ -25,18 +25,21 @@ export const MapPointsList: React.FC<MapPointsListType> = (props)  => {
     return showMapPointsList ? setShowMapPointList(false) : setShowMapPointList(true);
   }
 
+  let count = 0;
   const list = entries.map((entry) => {
-    return <MapPoint data={entry} onClickHandler={props.onClickHandler} key={Math.random()}></MapPoint>
+    count++
+    return <MapPoint data={entry} onClickHandler={props.onClickHandler} key={Math.random()} id={count}></MapPoint>
   });
+
   return (
   <div id='map-points-wrapper' {...swipeHandlers} className={!showMapPointsList ? 'onTop' : undefined}>
-    <div id='drag-indicator-wrapper'><div id='drag-indicator' test-id='drag-indicator'/></div>
+    <div id='drag-indicator-wrapper'><div id='drag-indicator' data-testid='drag-indicator'/></div>
     <div id='header-wrapper'>
-      <h2 className={!showMapPointsList ? 'undisplayedDesktop' : undefined}>Check our locations:</h2>
-      <div id='carret-down' role='carret-down'  className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
-      <div id='carret-up' role='carret-up' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
-      <div id='close' role='close' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
-      <div id='open' role='open' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
+      <h2 role='caption' className={!showMapPointsList ? 'undisplayedDesktop' : undefined}>Check our locations:</h2>
+      <div id='carret-down' role='carret-down' data-testid='carret-down' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
+      <div id='carret-up' role='carret-up' data-testid='carret-up' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
+      <div id='close' role='close' data-testid='close' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
+      <div id='open' role='open' data-testid='open' className={showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/> 
     </div>
     <div id="map-points-list" role='map-points-list' className={!showMapPointsList ? 'unvisible' : undefined}>
     {list}

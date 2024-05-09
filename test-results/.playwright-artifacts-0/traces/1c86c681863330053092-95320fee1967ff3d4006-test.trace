@@ -1,0 +1,33 @@
+
+{"type":"before","callId":"hook@1","wallTime":1715368303509,"startTime":206.914,"class":"Test","method":"step","apiName":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@2","parentId":"hook@1","wallTime":1715368303518,"startTime":214.618,"class":"Test","method":"step","apiName":"fixture: browser","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@3","parentId":"fixture@2","wallTime":1715368303520,"startTime":216.867,"class":"Test","method":"step","apiName":"browserType.launch","params":{"handleSIGINT":"false","slowMo":"50","headless":"true","tracesDir":"/Users/ewa.wrobel/fun-with-maps/fun-with-maps/test-results/.playwright-artifacts-0/traces","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@3","endTime":448.278,"attachments":[]}
+{"type":"after","callId":"fixture@2","endTime":464.041,"attachments":[]}
+{"type":"before","callId":"fixture@4","parentId":"hook@1","wallTime":1715368303769,"startTime":465.603,"class":"Test","method":"step","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@5","parentId":"fixture@4","wallTime":1715368303789,"startTime":485.507,"class":"Test","method":"step","apiName":"browser.newContext","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.6422.26 Safari/537.36","viewport":"Object","baseURL":"http://localhost:5173","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","recordHar":"undefined","reducedMotion":"undefined","forcedColors":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@5","endTime":509.821,"attachments":[]}
+{"type":"after","callId":"fixture@4","endTime":529.694,"attachments":[]}
+{"type":"before","callId":"fixture@6","parentId":"hook@1","wallTime":1715368303848,"startTime":544.03,"class":"Test","method":"step","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@7","parentId":"fixture@6","wallTime":1715368303866,"startTime":563.09,"class":"Test","method":"step","apiName":"browserContext.newPage","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@7","endTime":698.64,"attachments":[]}
+{"type":"after","callId":"fixture@6","endTime":713.051,"attachments":[]}
+{"type":"after","callId":"hook@1","endTime":713.31,"attachments":[]}
+{"type":"before","callId":"pw:api@8","wallTime":1715368304019,"startTime":716.399,"class":"Test","method":"step","apiName":"page.goto","params":{"url":"http://localhost:5173/","waitUntil":"load"},"stack":[{"file":"/Users/ewa.wrobel/fun-with-maps/fun-with-maps/e2e/e2eFlow.spec.ts","line":16,"column":14}]}
+{"type":"after","callId":"pw:api@8","endTime":1967.562,"attachments":[]}
+{"type":"before","callId":"expect@9","wallTime":1715368305273,"startTime":1970.5720000000001,"class":"Test","method":"step","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"/Users/ewa.wrobel/fun-with-maps/fun-with-maps/e2e/e2eFlow.spec.ts","line":17,"column":104}]}
+{"type":"before","callId":"hook@10","wallTime":1715368350405,"startTime":47102.35,"class":"Test","method":"step","apiName":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@11","parentId":"hook@10","wallTime":1715368350408,"startTime":47105.05,"class":"Test","method":"step","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"after","callId":"fixture@11","endTime":47106.491,"attachments":[]}
+{"type":"before","callId":"fixture@12","parentId":"hook@10","wallTime":1715368350410,"startTime":47108.756,"class":"Test","method":"step","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"after","callId":"fixture@12","endTime":47109.558,"attachments":[]}
+{"type":"after","callId":"expect@9","endTime":47405.06,"attachments":[],"error":{"name":"","message":"Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 220000ms\u001b[22m\n\u001b[2m  - waiting for getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\u001b[22m\n","stack":"Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 220000ms\u001b[22m\n\u001b[2m  - waiting for getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\u001b[22m\n\n    at /Users/ewa.wrobel/fun-with-maps/fun-with-maps/e2e/e2eFlow.spec.ts:17:104"}}
+{"type":"error","message":"Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 220000ms\u001b[22m\n\u001b[2m  - waiting for getByText('11, Framnesvegur, Vesturbær, Reykjavik, Capital Region, 101, Iceland')\u001b[22m\n","stack":[{"file":"/Users/ewa.wrobel/fun-with-maps/fun-with-maps/e2e/e2eFlow.spec.ts","line":17,"column":104}]}
+{"type":"error","message":"Error: Channel closed","stack":[{"file":"/Users/ewa.wrobel/fun-with-maps/fun-with-maps/e2e/e2eFlow.spec.ts","line":17,"column":3}]}
+{"type":"after","callId":"hook@10","endTime":47411.121,"attachments":[]}
+{"type":"before","callId":"hook@13","wallTime":1715368350715,"startTime":47411.663,"class":"Test","method":"step","apiName":"Worker Cleanup","params":{},"stack":[]}
+{"type":"before","callId":"fixture@14","parentId":"hook@13","wallTime":1715368350715,"startTime":47412.426,"class":"Test","method":"step","apiName":"fixture: browser","params":{},"stack":[]}
+{"type":"after","callId":"fixture@14","endTime":47452.321,"attachments":[]}
+{"type":"after","callId":"hook@13","endTime":47453.012,"attachments":[]}
+{"type":"before","callId":"attach@15","wallTime":1715368350892,"startTime":47589.279,"class":"Test","method":"step","apiName":"attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@15","endTime":47589.512,"attachments":[]}

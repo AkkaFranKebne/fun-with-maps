@@ -1,0 +1,52 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/MapPoint/MapPoint.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b175f560"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.__vite_plugin_react_preamble_installed__) {
+    throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = (type, id) => {
+    RefreshRuntime.register(type, "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/MapPoint/MapPoint.tsx " + id);
+  };
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=b175f560"; const useState = __vite__cjsImport3_react["useState"];
+import "/src/components/MapPoint/MapPoint.scss";
+export const MapPoint = (props) => {
+  _s();
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    props.onClickHandler(props.data);
+    setClicked(true);
+  };
+  return /* @__PURE__ */ jsxDEV("div", { onClick: handleClick, role: "map-point", className: "map-point", id: clicked ? "clicked" : void 0, "data-testid": `map-point-${props.id}`, children: props.data.name }, void 0, false, {
+    fileName: "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/MapPoint/MapPoint.tsx",
+    lineNumber: 20,
+    columnNumber: 5
+  }, this);
+};
+_s(MapPoint, "jtVlDw5cnA+NYcP4MwfyDLzHcyI=");
+_c = MapPoint;
+var _c;
+$RefreshReg$(_c, "MapPoint");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/MapPoint/MapPoint.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports)
+        return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+      if (invalidateMessage)
+        import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBbUJJOzs7Ozs7Ozs7Ozs7Ozs7OztBQWxCSixTQUFnQkEsZ0JBQWdCO0FBRWhDLE9BQU87QUFRQSxhQUFNQyxXQUErQkEsQ0FBQ0MsVUFBVztBQUFBQyxLQUFBO0FBQ3RELFFBQU0sQ0FBRUMsU0FBU0MsVUFBVSxJQUFLTCxTQUFrQixLQUFLO0FBQ3ZELFFBQU1NLGNBQWNBLE1BQU07QUFDeEJKLFVBQU1LLGVBQWVMLE1BQU1NLElBQUk7QUFDL0JILGVBQVcsSUFBSTtBQUFBLEVBQ2pCO0FBRUEsU0FDRSx1QkFBQyxTQUFJLFNBQVNDLGFBQWEsTUFBSyxhQUFZLFdBQVUsYUFBWSxJQUFJRixVQUFVLFlBQVlLLFFBQVcsZUFBYyxhQUFZUCxNQUFNUSxFQUFHLElBQ3ZJUixnQkFBTU0sS0FBS0csUUFEZDtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBRUE7QUFFSjtBQUFDUixHQVpZRixVQUE0QjtBQUFBVyxLQUE1Qlg7QUFBNEIsSUFBQVc7QUFBQUMsYUFBQUQsSUFBQSIsIm5hbWVzIjpbInVzZVN0YXRlIiwiTWFwUG9pbnQiLCJwcm9wcyIsIl9zIiwiY2xpY2tlZCIsInNldENsaWNrZWQiLCJoYW5kbGVDbGljayIsIm9uQ2xpY2tIYW5kbGVyIiwiZGF0YSIsInVuZGVmaW5lZCIsImlkIiwibmFtZSIsIl9jIiwiJFJlZnJlc2hSZWckIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIk1hcFBvaW50LnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCBSZWFjdCwgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcFBvaW50VHlwZSB9IGZyb20gJy4uLy4uL3V0aWxzL2RhdGFGb3JNYXAnO1xuaW1wb3J0ICcuL01hcFBvaW50LnNjc3MnXG5cbnR5cGUgTWFwUG9pbnQgPSB7XG4gIGRhdGE6IE1hcFBvaW50VHlwZTtcbiAgb25DbGlja0hhbmRsZXI6IChtYXBQb2ludDogTWFwUG9pbnRUeXBlKSA9PiB2b2lkO1xuICBpZDogbnVtYmVyO1xufVxuXG5leHBvcnQgY29uc3QgTWFwUG9pbnQ6IFJlYWN0LkZDPE1hcFBvaW50PiA9IChwcm9wcykgID0+IHtcbiAgY29uc3QgWyBjbGlja2VkLCBzZXRDbGlja2VkIF0gPSB1c2VTdGF0ZTxib29sZWFuPihmYWxzZSk7XG4gIGNvbnN0IGhhbmRsZUNsaWNrID0gKCkgPT4ge1xuICAgIHByb3BzLm9uQ2xpY2tIYW5kbGVyKHByb3BzLmRhdGEpO1xuICAgIHNldENsaWNrZWQodHJ1ZSk7XG4gIH07XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IG9uQ2xpY2s9e2hhbmRsZUNsaWNrfSByb2xlPSdtYXAtcG9pbnQnIGNsYXNzTmFtZT0nbWFwLXBvaW50JyBpZD17Y2xpY2tlZCA/ICdjbGlja2VkJyA6IHVuZGVmaW5lZH0gZGF0YS10ZXN0aWQ9e2BtYXAtcG9pbnQtJHtwcm9wcy5pZH1gfT5cbiAgICAgIHtwcm9wcy5kYXRhLm5hbWV9XG4gICAgPC9kaXY+XG4gICk7XG59Il0sImZpbGUiOiIvVXNlcnMvZXdhLndyb2JlbC9mdW4td2l0aC1tYXBzL2Z1bi13aXRoLW1hcHMvc3JjL2NvbXBvbmVudHMvTWFwUG9pbnQvTWFwUG9pbnQudHN4In0=

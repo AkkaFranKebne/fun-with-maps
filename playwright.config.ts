@@ -29,7 +29,7 @@ const config: PlaywrightTestConfig = {
     launchOptions: {
       slowMo: process.env.NODE_ENV === 'production' ? 0 : 50
     },
-    storageState: 'storageState.json' // Load signed-in state from 'storageState.json' for all tests.
+    // storageState: 'storageState.json' // Load signed-in state from 'storageState.json' for all tests.
   },
   projects: [
     {

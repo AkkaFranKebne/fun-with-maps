@@ -1,0 +1,7 @@
+HTTP 429: Too Many Requests
+
+You are submitting too many requests, i.e. more than allowed by your geocoding plan subscription (1 per second for free accounts).
+
+For faster geocoding, please upgrade at https://geocode.maps.co/plans/
+
+If you continue to submit too many requests you may be permanently blocked.

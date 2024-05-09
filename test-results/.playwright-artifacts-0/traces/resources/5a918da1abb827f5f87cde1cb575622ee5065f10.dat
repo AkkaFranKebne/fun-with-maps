@@ -1,0 +1,77 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/AppContent/AppContent.tsx");import.meta.env = {"VITE_HERE_MAP_API_KEY": "XNM58xnH7cYPR81t4onWSQvRI1OpD37MOeLsS5w0OOQ", "VITE_GEO_CODE_API_KEY": "6623657061515929493718tyz78fb9d", "VITE_CLIENT_URL": "http://localhost:5173/", "BASE_URL": "/", "MODE": "development", "DEV": true, "PROD": false, "SSR": false};import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b175f560"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.__vite_plugin_react_preamble_installed__) {
+    throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = (type, id) => {
+    RefreshRuntime.register(type, "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/AppContent/AppContent.tsx " + id);
+  };
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=b175f560"; const useEffect = __vite__cjsImport3_react["useEffect"]; const useState = __vite__cjsImport3_react["useState"];
+import { MyMap } from "/src/components/Map/Map.tsx";
+import { coordinatesList, userPosition } from "/src/utils/dataForMap.ts";
+import { MapPointsList } from "/src/components/MapPointsList/MapPointsList.tsx";
+import "/src/components/AppContent/AppContent.scss";
+import { geoCodeService } from "/src/services/GeoCodeService.ts";
+const apikey = import.meta.env.VITE_HERE_MAP_API_KEY;
+export const AppContent = () => {
+  _s();
+  const [mapPointPosition, setMapPointPosition] = useState(null);
+  const [mapPointsList, setMapPointsList] = useState(null);
+  const onClickHandler = (mapPoint) => {
+    setMapPointPosition(mapPoint);
+  };
+  useEffect(() => {
+    const fetchMapPoint = async (lat, lng) => await geoCodeService.getAddress(lat, lng);
+    const fetchMapPoints = async () => {
+      const promises = coordinatesList.map(async (coordinates) => await fetchMapPoint(coordinates.lat, coordinates.lng));
+      const resolved = await Promise.all(promises);
+      setMapPointsList(resolved);
+    };
+    fetchMapPoints();
+  }, []);
+  return apikey && mapPointsList && /* @__PURE__ */ jsxDEV("div", { className: "content", children: [
+    /* @__PURE__ */ jsxDEV(MapPointsList, { list: mapPointsList, onClickHandler }, void 0, false, {
+      fileName: "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/AppContent/AppContent.tsx",
+      lineNumber: 32,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(MyMap, { apikey, userPosition, mapPointPosition, mapPointsList }, void 0, false, {
+      fileName: "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/AppContent/AppContent.tsx",
+      lineNumber: 33,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/AppContent/AppContent.tsx",
+    lineNumber: 31,
+    columnNumber: 5
+  }, this);
+};
+_s(AppContent, "D7r0e/DVZcvXPaqMABK0Xa75SxQ=");
+_c = AppContent;
+var _c;
+$RefreshReg$(_c, "AppContent");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("/Users/ewa.wrobel/fun-with-maps/fun-with-maps/src/components/AppContent/AppContent.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports)
+        return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+      if (invalidateMessage)
+        import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBK0JNOzJCQS9CTjtBQUFnQkEsTUFBV0MsY0FBUSxPQUFRLHNCQUFPO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ2xELFNBQVNDLGFBQWE7QUFDdEIsU0FBaUNDLGlCQUFpQkMsb0JBQW9CO0FBQ3RFLFNBQVNDLHFCQUFxQjtBQUM5QixPQUFPO0FBQ1AsU0FBU0Msc0JBQXNCO0FBRS9CLE1BQU1DLFNBQVNDLFlBQVlDLElBQUlDO0FBQ3hCLGFBQU1DLGFBQXVCQSxNQUFNO0FBQUFDLEtBQUE7QUFDeEMsUUFBTSxDQUFDQyxrQkFBa0JDLG1CQUFtQixJQUFJYixTQUFnQyxJQUFJO0FBQ3BGLFFBQU0sQ0FBQ2MsZUFBZUMsZ0JBQWdCLElBQUlmLFNBQWtDLElBQUk7QUFFaEYsUUFBTWdCLGlCQUFpQkEsQ0FBQ0MsYUFBMkI7QUFDakRKLHdCQUFvQkksUUFBUTtBQUFBLEVBQzlCO0FBRUFsQixZQUFVLE1BQU07QUFDZCxVQUFNbUIsZ0JBQWdCLE9BQU9DLEtBQWFDLFFBQWlCLE1BQU1mLGVBQWVnQixXQUFXRixLQUFJQyxHQUFHO0FBRWxHLFVBQU1FLGlCQUFpQixZQUFZO0FBQ2pDLFlBQU1DLFdBQW9DckIsZ0JBQWdCc0IsSUFBSSxPQUFPQyxnQkFBNEIsTUFBTVAsY0FBY08sWUFBWU4sS0FBS00sWUFBWUwsR0FBRyxDQUFDO0FBQ3RKLFlBQU1NLFdBQVcsTUFBTUMsUUFBUUMsSUFBSUwsUUFBUTtBQUMzQ1IsdUJBQWlCVyxRQUFRO0FBQUEsSUFDM0I7QUFFQUosbUJBQWU7QUFBQSxFQUNqQixHQUFHLEVBQUU7QUFFTCxTQUNFaEIsVUFBVVEsaUJBQ1QsdUJBQUMsU0FBSSxXQUFVLFdBQ2Q7QUFBQSwyQkFBQyxpQkFBYyxNQUFNQSxlQUFlLGtCQUFwQztBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQW1FO0FBQUEsSUFDbkUsdUJBQUMsU0FBTSxRQUFnQixjQUE0QixrQkFBb0MsaUJBQXZGO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FBb0g7QUFBQSxPQUZySDtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBR0Q7QUFHSjtBQUFFSCxHQTVCV0QsWUFBb0I7QUFBQW1CLEtBQXBCbkI7QUFBb0IsSUFBQW1CO0FBQUFDLGFBQUFELElBQUEiLCJuYW1lcyI6WyJ1c2VFZmZlY3QiLCJ1c2VTdGF0ZSIsIk15TWFwIiwiY29vcmRpbmF0ZXNMaXN0IiwidXNlclBvc2l0aW9uIiwiTWFwUG9pbnRzTGlzdCIsImdlb0NvZGVTZXJ2aWNlIiwiYXBpa2V5IiwiaW1wb3J0IiwiZW52IiwiVklURV9IRVJFX01BUF9BUElfS0VZIiwiQXBwQ29udGVudCIsIl9zIiwibWFwUG9pbnRQb3NpdGlvbiIsInNldE1hcFBvaW50UG9zaXRpb24iLCJtYXBQb2ludHNMaXN0Iiwic2V0TWFwUG9pbnRzTGlzdCIsIm9uQ2xpY2tIYW5kbGVyIiwibWFwUG9pbnQiLCJmZXRjaE1hcFBvaW50IiwibGF0IiwibG5nIiwiZ2V0QWRkcmVzcyIsImZldGNoTWFwUG9pbnRzIiwicHJvbWlzZXMiLCJtYXAiLCJjb29yZGluYXRlcyIsInJlc29sdmVkIiwiUHJvbWlzZSIsImFsbCIsIl9jIiwiJFJlZnJlc2hSZWckIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkFwcENvbnRlbnQudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VFZmZlY3QsIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgTXlNYXAgfSBmcm9tICcuLi9NYXAvTWFwJztcbmltcG9ydCB7IE1hcFBvaW50VHlwZSwgUG9zaXRpb24sIGNvb3JkaW5hdGVzTGlzdCwgdXNlclBvc2l0aW9uIH0gZnJvbSAnLi4vLi4vdXRpbHMvZGF0YUZvck1hcCc7XG5pbXBvcnQgeyBNYXBQb2ludHNMaXN0IH0gZnJvbSAnLi4vTWFwUG9pbnRzTGlzdC9NYXBQb2ludHNMaXN0JztcbmltcG9ydCAnLi9BcHBDb250ZW50LnNjc3MnXG5pbXBvcnQgeyBnZW9Db2RlU2VydmljZSB9IGZyb20gJy4uLy4uL3NlcnZpY2VzL0dlb0NvZGVTZXJ2aWNlJztcblxuY29uc3QgYXBpa2V5ID0gaW1wb3J0Lm1ldGEuZW52LlZJVEVfSEVSRV9NQVBfQVBJX0tFWTtcbmV4cG9ydCBjb25zdCBBcHBDb250ZW50OiBSZWFjdC5GQyA9ICgpID0+IHtcbiAgY29uc3QgW21hcFBvaW50UG9zaXRpb24sIHNldE1hcFBvaW50UG9zaXRpb25dID0gdXNlU3RhdGU8TWFwUG9pbnRUeXBlIHwgbnVsbCAgPihudWxsKTtcbiAgY29uc3QgW21hcFBvaW50c0xpc3QsIHNldE1hcFBvaW50c0xpc3RdID0gdXNlU3RhdGU8TWFwUG9pbnRUeXBlW10gfCBudWxsICA+KG51bGwpO1xuXG4gIGNvbnN0IG9uQ2xpY2tIYW5kbGVyID0gKG1hcFBvaW50OiBNYXBQb2ludFR5cGUpID0+IHtcbiAgICBzZXRNYXBQb2ludFBvc2l0aW9uKG1hcFBvaW50KTtcbiAgfTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIGNvbnN0IGZldGNoTWFwUG9pbnQgPSBhc3luYyAobGF0OiBudW1iZXIsIGxuZzogbnVtYmVyKSA9PiAgYXdhaXQgZ2VvQ29kZVNlcnZpY2UuZ2V0QWRkcmVzcyhsYXQsbG5nKTsgICBcblxuICAgIGNvbnN0IGZldGNoTWFwUG9pbnRzID0gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgcHJvbWlzZXM6IFByb21pc2U8TWFwUG9pbnRUeXBlPltdID0gY29vcmRpbmF0ZXNMaXN0Lm1hcChhc3luYyAoY29vcmRpbmF0ZXM6IFBvc2l0aW9uKSA9PiAgIGF3YWl0IGZldGNoTWFwUG9pbnQoY29vcmRpbmF0ZXMubGF0LCBjb29yZGluYXRlcy5sbmcpKTtcbiAgICAgIGNvbnN0IHJlc29sdmVkID0gYXdhaXQgUHJvbWlzZS5hbGwocHJvbWlzZXMpO1xuICAgICAgc2V0TWFwUG9pbnRzTGlzdChyZXNvbHZlZCk7XG4gICAgfVxuICAgIFxuICAgIGZldGNoTWFwUG9pbnRzKCk7XG4gIH0sIFtdKVxuXG4gIHJldHVybiAoXG4gICAgYXBpa2V5ICYmIG1hcFBvaW50c0xpc3QgJiZcbiAgICAoPGRpdiBjbGFzc05hbWU9J2NvbnRlbnQnPlxuICAgICAgPE1hcFBvaW50c0xpc3QgbGlzdD17bWFwUG9pbnRzTGlzdH0gb25DbGlja0hhbmRsZXI9e29uQ2xpY2tIYW5kbGVyfS8+XG4gICAgICA8TXlNYXAgYXBpa2V5PXthcGlrZXl9IHVzZXJQb3NpdGlvbj17dXNlclBvc2l0aW9ufSBtYXBQb2ludFBvc2l0aW9uPXttYXBQb2ludFBvc2l0aW9ufSBtYXBQb2ludHNMaXN0PXttYXBQb2ludHNMaXN0fS8+XG4gICAgPC9kaXY+XG4gICAgKVxuICApXG59OyJdLCJmaWxlIjoiL1VzZXJzL2V3YS53cm9iZWwvZnVuLXdpdGgtbWFwcy9mdW4td2l0aC1tYXBzL3NyYy9jb21wb25lbnRzL0FwcENvbnRlbnQvQXBwQ29udGVudC50c3gifQ==
