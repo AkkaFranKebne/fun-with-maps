@@ -32,8 +32,8 @@ export const MapPointsList: React.FC<MapPointsListType> = (props)  => {
   });
 
   return (
-  <div id='map-points-wrapper' {...swipeHandlers} className={!showMapPointsList ? 'onTop' : undefined}>
-    <div id='drag-indicator-wrapper'><div id='drag-indicator' data-testid='drag-indicator'/></div>
+  <div id='map-points-wrapper'  className={!showMapPointsList ? 'onTop' : undefined}>
+    <div id='drag-indicator-wrapper' {...swipeHandlers}><div id='drag-indicator' data-testid='drag-indicator'/></div>
     <div id='header-wrapper'>
       <h2 role='caption' className={!showMapPointsList ? 'undisplayedDesktop' : undefined}>Check our locations:</h2>
       <div id='carret-down' role='carret-down' data-testid='carret-down' className={!showMapPointsList ? 'undisplayed' : undefined} onClick={handleOnClick}/>
