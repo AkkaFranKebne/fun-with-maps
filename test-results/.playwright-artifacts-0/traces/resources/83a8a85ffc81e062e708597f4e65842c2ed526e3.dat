@@ -1,6 +1,0 @@
-import {
-  require_react
-} from "/node_modules/.vite/deps/chunk-YSDLPTTY.js?v=b175f560";
-import "/node_modules/.vite/deps/chunk-ZS7NZCD4.js?v=b175f560";
-export default require_react();
-//# sourceMappingURL=react.js.map

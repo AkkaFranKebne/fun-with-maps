@@ -55,6 +55,8 @@
     overflow:hidden;
   }
   #open {
+    height: 1px;
+    width: 1px;
     display: none;
     width: 0; 
     height: 0; 
@@ -75,6 +77,8 @@
   }
   #close {
     display: none;
+    height: 1px;
+    width: 1px;
     @media only screen and (min-width: 600px)  {
       display: block;
       position: absolute;

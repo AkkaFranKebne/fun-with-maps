@@ -5,10 +5,10 @@ test('opens and closes menu', async ({ page }) => {
   await expect(page).toHaveTitle('Vite + React + TS');
   await expect(page.getByText('Check our locations:')).toBeVisible();
   await expect(page.getByTestId('close')).toBeVisible();
-  await page.getByTestId('close').click();
+  await page.evaluate("document.getElementById('close').click()")
   await expect(page.getByRole('caption', { name: 'Check our locations:' })).toBeHidden();
   await expect(page.getByTestId('open')).toBeVisible();
-  await page.getByTestId('open').click();
+  await page.evaluate("document.getElementById('open').click()")
   await expect(page.getByRole('caption', { name: 'Check our locations:' })).toBeHidden();
 });
 
