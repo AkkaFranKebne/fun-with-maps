@@ -22,6 +22,7 @@ describe('useElementSize', () => {
     );
 
     expect(result.current).toBeTruthy();
+    //@ts-ignore
     expect(result.current).toBe([ { current: <div style="width: 5px; height: 10px;"/> }, { width: '5px', height: '10px' } ]) //@todo
   })
 
