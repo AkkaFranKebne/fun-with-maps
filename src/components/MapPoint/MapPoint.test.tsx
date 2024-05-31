@@ -19,7 +19,7 @@ describe('MapPoint', () => {
     const onClickHandlerMock = mock<(mapPoint: MapPointType) => void>();
 
     render(
-      <MapPoint data={stubMapPoint} onClickHandler={onClickHandlerMock}/>
+      <MapPoint id={1} data={stubMapPoint} onClickHandler={onClickHandlerMock}/>
     );
     
     expect(screen.getByRole('map-point')).toBeDefined();
@@ -42,7 +42,7 @@ describe('MapPoint', () => {
     when(() => onClickHandlerMock(stubMapPoint)).thenReturn(undefined);
 
     render(
-      <MapPoint data={stubMapPoint} onClickHandler={onClickHandlerMock}/>
+      <MapPoint id={1} data={stubMapPoint} onClickHandler={onClickHandlerMock}/>
     );
     expect(screen.getByRole('map-point')).toBeDefined();
 
