@@ -1,4 +1,4 @@
-import { dataForPolygon } from "./dataForMap";
+import { dataForPolygon } from './dataForMap'
 
 /**
  * Adds a polygon to the map
@@ -6,15 +6,15 @@ import { dataForPolygon } from "./dataForMap";
  * @param  {H.Map} map      A HERE Map instance within the application
  */
 export function addPolygonToMap(map: any) {
-  var lineString = new H.geo.LineString(dataForPolygon);
+  var lineString = new H.geo.LineString(dataForPolygon)
   map.addObject(
     //@ts-ignore
     new H.map.Polygon(lineString, {
       style: {
         fillColor: '#FFFFCC',
         strokeColor: '#829',
-        lineWidth: 8
-      }
+        lineWidth: 8,
+      },
     })
-  );
+  )
 }
