@@ -1,22 +1,31 @@
-
 @keyframes jump {
-  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
-  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
-  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  40% {
+    transform: translate3d(0, 30%, 0) scale3d(0.7, 1.5, 1);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0) scale3d(1.5, 0.7, 1);
+  }
 }
 
 @keyframes fullRotate {
-  100% {transform: rotate(180deg);}
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 #map-points-wrapper {
   background-color: white;
   border-radius: 10px 10px 0 0;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   z-index: 100;
   border-radius: 10px 10px 0 0;
   margin: -15px 0 0 0;
-  @media only screen and (min-width: 600px)  {
+  @media only screen and (min-width: 600px) {
     border-radius: 0 10px 10px 0;
     margin: 0 -15px 0 0;
     width: 265px;
@@ -25,7 +34,7 @@
   }
 
   &.onTop {
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       width: 50px;
       max-width: 50px;
       transition: all 0.1s ease-in-out;
@@ -36,7 +45,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       display: none;
     }
     #drag-indicator {
@@ -52,26 +61,26 @@
     justify-content: space-between;
     margin: 0 10px;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
   }
   #open {
     height: 1px;
     width: 1px;
     display: none;
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid black;
     margin: auto 5px;
     &:hover {
       transform-origin: 50% 50%;
-      animation: jump .5s linear alternate infinite;
+      animation: jump 0.5s linear alternate infinite;
     }
     &:active {
-      animation: fullRotate .3s linear forwards;
+      animation: fullRotate 0.3s linear forwards;
     }
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       display: block;
     }
   }
@@ -79,7 +88,7 @@
     display: none;
     height: 1px;
     width: 1px;
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       display: block;
       position: absolute;
       top: 12px;
@@ -89,7 +98,8 @@
       }
     }
   }
-  #close:before, #close:after {
+  #close:before,
+  #close:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -104,38 +114,38 @@
     transform: rotate(-45deg);
   }
   #carret-down {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid black;
     margin: auto 5px;
     &:hover {
       transform-origin: 50% 50%;
-      animation: jump .5s linear alternate infinite;
+      animation: jump 0.5s linear alternate infinite;
     }
     &:active {
-      animation: fullRotate .3s linear forwards;
+      animation: fullRotate 0.3s linear forwards;
     }
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       display: none;
     }
   }
   #carret-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid black;
     margin: auto 5px;
     &:hover {
       transform-origin: 50% 50%;
-      animation: jump .5s linear alternate infinite;
+      animation: jump 0.5s linear alternate infinite;
     }
     &:active {
-      animation: fullRotate .3s linear forwards;
+      animation: fullRotate 0.3s linear forwards;
     }
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       display: none;
     }
   }
@@ -144,7 +154,7 @@
     max-height: 300px;
     transition: all 1s ease-in-out;
     overflow: scroll;
-@media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       transition: none;
       max-height: 90vh;
     }
@@ -154,7 +164,7 @@
   }
 
   .undisplayedDesktop {
-    @media only screen and (min-width: 600px)  {
+    @media only screen and (min-width: 600px) {
       max-height: 0 !important;
       overflow: hidden;
       transition: all 1.2s linear;
@@ -165,8 +175,8 @@
     max-height: 0 !important;
     overflow: hidden;
     transition: all 1s ease-in-out;
-    @media only screen and (min-width: 600px)  {
-          transition: none;
+    @media only screen and (min-width: 600px) {
+      transition: none;
     }
   }
 }

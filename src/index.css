@@ -1,19 +1,18 @@
 @font-face {
   font-family: 'lucida_granderegular';
   src: url('../src/assets/fonts/lucidagrande-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/lucidagrande-webfont.woff') format('woff');
+    url('../src/assets/fonts/lucidagrande-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'lucida_grandebold';
-  src: url('../src/assets/fonts/lucidagrande_bold-webfont.woff2') format('woff2'),
-       url('../src/assets/fonts/lucidagrande_bold-webfont.woff') format('woff');
+  src: url('../src/assets/fonts/lucidagrande_bold-webfont.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/lucidagrande_bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 :root {
@@ -31,7 +30,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: lucida_grandebold, Helvetica, Arial, sans-serif;
 }
 
