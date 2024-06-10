@@ -2,12 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import H from '@here/maps-api-for-javascript'
 import { MapPointType, Position, coordinatesList } from '../../utils/dataForMap'
 import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo'
-import './Map.scss'
 import useElementSize from '../../hooks/useElementSize'
 import { useMiddleCoordinate } from '../../hooks/useMiddleCoordinate'
 import { useDoubleRadius } from '../../hooks/useDoubleRadius'
 
-export type MyMapType = {
+export type MyMapType = { 
   apikey: string
   userPosition: Position
   mapPointPosition: MapPointType | null
@@ -89,9 +88,6 @@ export const MyMap: React.FC<MyMapType> = (props) => {
         )
         newMap.addObject(circle)
 
-        // add polygon
-        //addPolygonToMap(newMap);
-
         // resize map on window resize
         window.addEventListener('resize', function () {
           newMap.getViewPort().resize()
@@ -99,7 +95,6 @@ export const MyMap: React.FC<MyMapType> = (props) => {
       }
 
       if (mapPointPosition) {
-        //calculateRoute(platform.current, map.current, userPosition, mapPointPosition);
         showBubbleOnMenuClick({
           map: map.current,
           ui: uis.current,
