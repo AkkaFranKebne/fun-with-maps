@@ -17,7 +17,3 @@ export const coordinatesList: Position[] = [
   { lat: 64.1475, lng: -21.9347 },
   { lat: 64.1494, lng: -21.9337 },
 ]
-
-export const dataForPolygon = [
-  52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100,
-]
