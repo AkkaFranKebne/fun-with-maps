@@ -30,6 +30,7 @@ describe('AppContent', () => {
           userPosition={stubMapPoint.location}
           mapPointPosition={stubMapPoint}
           mapPointsList={[stubMapPoint]}
+          coordinatesList={[stubMapPoint.location]}
         />
       </div>
     )
