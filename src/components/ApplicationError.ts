@@ -16,3 +16,8 @@ export const GET_ADDRESS_FAILED: Error = {
   errorStatus: 'INTERNAL_ERROR',
   errorReason: 'GET_ADDRESS_FAILED',
 }
+
+export const GET_USER_FAILED: Error = {
+  errorStatus: 'INTERNAL_ERROR',
+  errorReason: 'GET_USER_FAILED',
+}
