@@ -9,6 +9,16 @@ export const handlers = [
       lng: -21.9398 
     })
   }),
+    // Intercept "GET https://example.com/locations" requests...
+    http.get('https://example.com/locations', () => {
+      // ...and respond to them using this JSON response.
+      return HttpResponse.json([
+        { lat: 64.1508, lng: -21.9536 },
+        { lat: 64.1502, lng: -21.9519 },
+        { lat: 64.1475, lng: -21.9347 },
+        { lat: 64.1494, lng: -21.9337 },
+      ])
+    }),
 ]
 // for starting the service worker run
 // npx msw init ./public --save
