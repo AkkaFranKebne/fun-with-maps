@@ -21,3 +21,8 @@ export const GET_USER_FAILED: Error = {
   errorStatus: 'INTERNAL_ERROR',
   errorReason: 'GET_USER_FAILED',
 }
+
+export const GET_LOCATIONS_FAILED: Error = {
+  errorStatus: 'INTERNAL_ERROR',
+  errorReason: 'GET_LOCATIONS_FAILED',
+}

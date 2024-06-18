@@ -3,12 +3,12 @@ import { MyMap } from '../Map/Map'
 import {
   MapPointType,
   Position,
-  coordinatesList,
 } from '../../utils/dataForMap'
 import { MapPointsList } from '../MapPointsList/MapPointsList'
 import './AppContent.scss'
 import { geoCodeService } from '../../services/GeoCodeService'
 import { userService } from '../../services/UserService'
+import { locationsService } from '../../services/LocationsService';
 
 const apikey = import.meta.env.VITE_HERE_MAP_API_KEY
 export const AppContent: React.FC = () => {
@@ -19,6 +19,8 @@ export const AppContent: React.FC = () => {
     null
   );
   const [userPosition, setUserPosition] = useState<Position>({ lat: 0, lng: 0 });
+
+  const [locations, setLocations] = useState<Position[]>([{ lat: 0, lng: 0 }]);
 
   const onClickHandler = (mapPoint: MapPointType) => {
     setMapPointPosition(mapPoint)
@@ -32,9 +34,10 @@ export const AppContent: React.FC = () => {
       const resolved = await userService.getUser();
       setUserPosition(resolved);
     }
-      
 
     const fetchMapPoints = async () => {
+      const coordinatesList = await await locationsService.getLocations();
+      setLocations(coordinatesList);
       const promises: Promise<MapPointType>[] = coordinatesList.map(
         async (coordinates: Position) =>
           await fetchMapPoint(coordinates.lat, coordinates.lng)
@@ -57,6 +60,7 @@ export const AppContent: React.FC = () => {
           userPosition={userPosition}
           mapPointPosition={mapPointPosition}
           mapPointsList={mapPointsList}
+          coordinatesList={locations}
         />
       </div>
     )

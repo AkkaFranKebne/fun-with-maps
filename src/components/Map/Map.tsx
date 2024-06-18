@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import H from '@here/maps-api-for-javascript'
-import { MapPointType, Position, coordinatesList } from '../../utils/dataForMap'
+import { MapPointType, Position } from '../../utils/dataForMap'
 import { addInfoBubble, showBubbleOnMenuClick } from '../../utils/addMapInfo'
 import useElementSize from '../../hooks/useElementSize'
 import { useMiddleCoordinate } from '../../hooks/useMiddleCoordinate'
@@ -11,6 +11,7 @@ export type MyMapType = {
   userPosition: Position
   mapPointPosition: MapPointType | null
   mapPointsList: MapPointType[]
+  coordinatesList: Position[]
 }
 
 export const MyMap: React.FC<MyMapType> = (props) => {
@@ -18,7 +19,7 @@ export const MyMap: React.FC<MyMapType> = (props) => {
   const map = useRef<HTMLInputElement | null>(null)
   const platform = useRef<HTMLInputElement | null>(null)
   const uis = useRef<HTMLInputElement | null>(null)
-  const { apikey, userPosition, mapPointPosition, mapPointsList } = props
+  const { apikey, userPosition, mapPointPosition, mapPointsList, coordinatesList } = props
 
   // observing the map's div size
   const [boxRef, { width, height }] = useElementSize()
