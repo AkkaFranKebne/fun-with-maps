@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw'
  
 export const handlers = [
-  // Intercept "GET https://example.com/user" requests...
+  // Intercepting "GET https://example.com/user" requests...
   http.get('https://example.com/user', () => {
     // ...and respond to them using this JSON response.
     return HttpResponse.json({ 
@@ -9,7 +9,7 @@ export const handlers = [
       lng: -21.9398 
     })
   }),
-    // Intercept "GET https://example.com/locations" requests...
+    // Intercepting "GET https://example.com/locations" requests...
     http.get('https://example.com/locations', () => {
       // ...and respond to them using this JSON response.
       return HttpResponse.json([
@@ -20,5 +20,5 @@ export const handlers = [
       ])
     }),
 ]
-// for making the service worker run
+// for forcing the service worker run
 // npx msw init ./public --save
