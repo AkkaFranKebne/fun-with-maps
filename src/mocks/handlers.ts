@@ -20,5 +20,5 @@ export const handlers = [
       ])
     }),
 ]
-// for starting the service worker run
+// for making the service worker run
 // npx msw init ./public --save
