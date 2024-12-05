@@ -3,6 +3,7 @@ import { MapPointType } from '../../utils/dataForMap'
 import { MapPoint } from '../MapPoint/MapPoint'
 import './MapPointsList.scss'
 import useSwipe from '../../hooks/useSwipe'
+import { Button } from '@AkkaFranKebne/templates-lib-test'
 
 export type MapPointsListType = {
   list: MapPointType[]
@@ -90,6 +91,7 @@ export const MapPointsList: React.FC<MapPointsListType> = (props) => {
       >
         {list}
       </div>
+      <Button label='button from library'/>
     </div>
   )
 }
